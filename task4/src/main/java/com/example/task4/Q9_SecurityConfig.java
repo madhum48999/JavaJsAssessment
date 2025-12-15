@@ -22,7 +22,7 @@ public class Q9_SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // Disable CSRF for simplicity in testing POSTs
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest().authenticated())
+                        .anyRequest().permitAll())
                 .httpBasic(Customizer.withDefaults()); // Enable Basic Auth
 
         return http.build();
